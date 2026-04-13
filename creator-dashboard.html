@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Creator Dashboard - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/creator-dashboard.css">
+</head>
+<body data-page="creator-dashboard">
+  <div id="site-header"></div>
+
+  <main class="creator-dashboard-shell">
+    <section class="creator-dashboard-hero">
+      <a href="profile.html" class="hero-back-link" aria-label="Go back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+
+      <div class="creator-hero-card">
+        <div class="creator-hero-copy">
+          <div class="creator-chip">Creator Mode</div>
+          <h1 id="creatorDashboardTitle">Welcome back, Creator.</h1>
+          <p id="creatorDashboardSubtitle">Manage your publishing identity, move into upload, and keep track of your current creator space from one TooU dashboard.</p>
+
+          <div class="creator-hero-actions">
+            <a href="upload.html" class="creator-primary-btn" id="dashboardUploadBtn">
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              <span>Upload Content</span>
+            </a>
+            <a href="analytics.html" class="creator-secondary-btn creator-analytics-btn">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Analytics</span>
+            </a>
+            <button type="button" class="creator-secondary-btn creator-notification-btn" id="creatorNotificationBtn">
+              <i class="fa-regular fa-bell"></i>
+              <span>Notifications</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="creator-hero-panel">
+          <div class="hero-panel-head">
+            <div class="creator-mini-label">Active Creator Profile</div>
+            <button type="button" class="mini-link mini-link-btn creator-edit-link" id="editCreatorBtn">Edit creator profile</button>
+          </div>
+          <div class="creator-profile-row">
+            <div class="creator-avatar" id="creatorAvatar">T</div>
+            <div>
+              <strong id="creatorDisplayName">TooU Creator</strong>
+              <div class="creator-meta" id="creatorMeta">Individual creator</div>
+            </div>
+          </div>
+          <div class="creator-summary-grid">
+            <div class="creator-summary-item">
+              <span>Primary format</span>
+              <strong id="creatorPrimaryFormat">Webtoon</strong>
+            </div>
+            <div class="creator-summary-item">
+              <span>Verification</span>
+              <strong id="creatorVerification">Pending</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="creator-dashboard-grid">
+      <article class="creator-dashboard-panel creator-dashboard-panel-wide">
+        <div class="panel-head">
+          <div>
+            <div class="panel-kicker">Performance</div>
+            <h2>Creator snapshot</h2>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="metric-icon views"><i class="fa-regular fa-eye"></i></div>
+            <strong id="metricViews">125,000</strong>
+            <span>Total Views</span>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon likes"><i class="fa-regular fa-heart"></i></div>
+            <strong id="metricLikes">8,900</strong>
+            <span>Total Likes</span>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon readers"><i class="fa-regular fa-user"></i></div>
+            <strong id="metricFollowers">1,250</strong>
+            <span>Followers</span>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon earnings"><i class="fa-solid fa-wallet"></i></div>
+            <strong id="metricEarnings">300,000 MMK</strong>
+            <span>Total Earnings</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="creator-dashboard-panel creator-dashboard-panel-wide">
+        <div class="panel-head">
+          <div>
+            <div class="panel-kicker">Studio View</div>
+            <h2>Creator dashboard</h2>
+          </div>
+        </div>
+
+        <div class="dashboard-switcher" id="dashboardSwitcher">
+          <button type="button" class="dashboard-switch active" data-dashboard-view="earnings">Recent earnings</button>
+          <button type="button" class="dashboard-switch" data-dashboard-view="catalog">Published works</button>
+          <button type="button" class="dashboard-switch" data-dashboard-view="workflow">Drafts & schedule</button>
+          <button type="button" class="dashboard-switch" data-dashboard-view="inbox">Messages</button>
+        </div>
+
+        <div class="dashboard-view active" data-dashboard-view-panel="earnings">
+          <div class="panel-subhead">
+            <div>
+              <div class="panel-kicker">Finance</div>
+              <h3>Recent earnings</h3>
+            </div>
+          </div>
+          <div class="earnings-list" id="earningsList"></div>
+        </div>
+
+        <div class="dashboard-view" data-dashboard-view-panel="catalog">
+          <div class="panel-subhead">
+            <div>
+              <div class="panel-kicker">Catalog</div>
+              <h3>Publish and edit content</h3>
+            </div>
+            <a href="upload.html" class="mini-link">+ Upload content</a>
+          </div>
+          <div class="catalog-list" id="creatorCatalogList"></div>
+        </div>
+
+        <div class="dashboard-view" data-dashboard-view-panel="workflow">
+          <div class="panel-subhead">
+            <div>
+              <div class="panel-kicker">Workflow</div>
+              <h3>Drafts and schedule</h3>
+            </div>
+          </div>
+          <div class="workflow-block">
+            <div class="workflow-title">Draft chapters</div>
+            <div class="workflow-list" id="creatorDraftList"></div>
+          </div>
+          <div class="workflow-block">
+            <div class="workflow-title">Scheduled chapters</div>
+            <div class="workflow-list" id="creatorScheduleList"></div>
+          </div>
+        </div>
+
+        <div class="dashboard-view" data-dashboard-view-panel="inbox">
+          <div class="panel-subhead">
+            <div>
+              <div class="panel-kicker">Inbox</div>
+              <h3>Messages and comments</h3>
+            </div>
+          </div>
+          <div class="quick-grid">
+            <div class="quick-card">
+              <div class="quick-icon"><i class="fa-regular fa-message"></i></div>
+              <strong>Messages</strong>
+              <span>15 unread creator messages</span>
+            </div>
+            <div class="quick-card">
+              <div class="quick-icon"><i class="fa-regular fa-comments"></i></div>
+              <strong>Comments</strong>
+              <span>48 new reader comments</span>
+            </div>
+            <div class="quick-card">
+              <div class="quick-icon"><i class="fa-regular fa-pen-to-square"></i></div>
+              <strong>Publishing rhythm</strong>
+              <span id="creatorPublishingHint">Your current focus is ready to shape your next upload.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/creator-dashboard.js"></script>
+</body>
+</html>

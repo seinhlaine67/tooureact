@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Community - TooU</title>
+  <link rel="stylesheet" href="assets/css/community.css">
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body data-page="community">
+  <div class="container">
+    <div id="site-header"></div>
+
+    <section class="community-hero">
+      <div class="community-kicker">Community</div>
+      <h1>Readers sharing what is worth your next tap.</h1>
+      <p>See user recommendations, badges, and community reactions around webtoons, novels, comics, and knowledge titles.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <div class="section-title">Recommended By Readers</div>
+          <div class="section-copy">Users can recommend a series to others and spark discovery through likes, saves, and discussion-style interactions.</div>
+        </div>
+      </div>
+      <form class="community-composer" id="communityComposer">
+        <div class="composer-grid">
+          <label class="composer-field">
+            <span>Forward a Series</span>
+            <select id="forwardSeriesSelect" required></select>
+          </label>
+          <label class="composer-field">
+            <span>Discussion Title</span>
+            <input type="text" id="discussionTitleInput" placeholder="What should this discussion be called?" required>
+          </label>
+          <label class="composer-field composer-field-wide">
+            <span>Your Thoughts</span>
+            <textarea id="discussionBodyInput" rows="4" placeholder="Tell the community why you are forwarding this series." required></textarea>
+          </label>
+        </div>
+        <div class="composer-actions">
+          <p id="communityComposerMessage">Forward a series into the community feed so readers can discuss it together.</p>
+          <button type="submit" class="composer-btn">Forward to Community</button>
+        </div>
+      </form>
+      <div class="community-feed" id="communityFeed"></div>
+    </section>
+
+    <section class="section hidden" id="savedDiscussionsSection">
+      <div class="section-heading">
+        <div>
+          <div class="section-title">Saved Discussions</div>
+          <div class="section-copy">Posts you saved will stay visible here so you can come back and continue the conversation.</div>
+        </div>
+      </div>
+      <div class="saved-discussions" id="savedDiscussions"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-title">Trending Tags</div>
+      </div>
+      <div class="tag-row" id="tagRow"></div>
+    </section>
+  </div>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/community.js"></script>
+</body>
+</html>

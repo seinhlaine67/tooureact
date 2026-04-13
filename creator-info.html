@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Creator Info - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/creator-info.css">
+</head>
+<body data-page="creator-info">
+  <div id="site-header"></div>
+
+  <main class="creator-info-shell">
+    <a href="javascript:history.back()" class="floating-back-link" aria-label="Go back">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
+
+    <section class="creator-info-hero" id="creatorInfoHero"></section>
+    <section class="creator-info-layout">
+      <article class="creator-info-panel">
+        <div class="panel-kicker">About</div>
+        <h2 id="profileAboutTitle">Creator profile</h2>
+        <p id="creatorBio"></p>
+        <div class="creator-stats" id="creatorStatsBlock">
+          <div class="creator-stat">
+            <span>Followers</span>
+            <strong id="creatorFollowers">0</strong>
+          </div>
+          <div class="creator-stat">
+            <span>Total Views</span>
+            <strong id="creatorTotalViews">0</strong>
+          </div>
+          <div class="creator-stat">
+            <span>Heat</span>
+            <strong id="creatorRating">4.8</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="creator-info-panel hidden" id="studioArtistsPanel">
+        <div class="panel-kicker">Studio</div>
+        <h2 id="studioArtistTitle">Featured artists</h2>
+        <div class="artist-list" id="artistList"></div>
+      </article>
+
+      <article class="creator-info-panel creator-info-panel-wide">
+        <div class="panel-kicker">Catalog</div>
+        <h2 id="creatorWorksTitle">Published works</h2>
+        <div class="creator-work-grid" id="creatorWorkGrid"></div>
+      </article>
+    </section>
+  </main>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/creator-info.js"></script>
+</body>
+</html>

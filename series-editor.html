@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Series Editor - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/series-editor.css">
+</head>
+<body data-page="series-editor">
+  <div id="site-header"></div>
+
+  <main class="series-editor-shell">
+    <section class="series-editor-hero">
+      <a href="creator-dashboard.html" class="hero-back-link" aria-label="Go back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <div class="save-flash" id="seriesSaveFlash">Series changes saved.</div>
+      <div class="editor-kicker">Series Editor</div>
+      <h1 id="editorTitle">Edit your published series.</h1>
+      <p id="editorSubtitle">Update the series details, manage chapters, and save changes without going back through the original upload flow.</p>
+    </section>
+
+    <section class="series-editor-layout">
+      <form class="editor-form" id="seriesEditorForm">
+        <input type="hidden" name="seriesSlug">
+
+        <section class="editor-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">Series</div>
+              <h2>Series details</h2>
+            </div>
+          </div>
+
+          <div class="editor-grid">
+            <label class="editor-field editor-field-wide">
+              <span>Cover Image</span>
+              <div class="editor-upload-card">
+                <img class="editor-upload-preview editor-cover-preview" id="seriesCoverPreview" src="images/image1.png" alt="Series cover preview">
+                <input type="file" accept="image/*" id="seriesCoverInput" name="coverImage">
+                <small>Update the main series cover used on cards and listing rails.</small>
+              </div>
+            </label>
+            <label class="editor-field editor-field-wide">
+              <span>Detail Hero Image</span>
+              <div class="editor-upload-card">
+                <div class="editor-upload-preview editor-detail-preview" id="seriesDetailPreview"></div>
+                <input type="file" accept="image/*" id="seriesDetailInput" name="detailImage">
+                <small>Upload the larger hero image shown at the top of the detail page.</small>
+              </div>
+            </label>
+            <label class="editor-field">
+              <span>Series Title</span>
+              <input type="text" name="title" required>
+            </label>
+            <label class="editor-field">
+              <span>Genre</span>
+              <select name="genre">
+                <option>Fantasy</option>
+                <option>Action</option>
+                <option>Romance</option>
+                <option>Mystery</option>
+                <option>Knowledge</option>
+                <option>Drama</option>
+                <option>Horror</option>
+                <option>Comedy</option>
+              </select>
+            </label>
+            <label class="editor-field">
+              <span>Audience</span>
+              <select name="audience">
+                <option>General</option>
+                <option>Teen</option>
+                <option>Mature</option>
+              </select>
+            </label>
+            <label class="editor-field editor-field-wide">
+              <span>Synopsis</span>
+              <textarea name="synopsis" rows="4"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="editor-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">Chapters</div>
+              <h2 id="chapterSectionTitle">Manage chapters</h2>
+            </div>
+            <button type="button" class="panel-action" id="addChapterBtn">+ Add Chapter</button>
+          </div>
+          <div class="chapter-helper">Open the chapter you want to edit, update it, then save from the top of the page.</div>
+          <div class="chapter-list" id="chapterList"></div>
+        </section>
+
+        <div class="editor-actions">
+          <button type="button" class="editor-btn secondary" id="deleteSeriesBtn">Delete Series</button>
+          <button type="submit" class="editor-btn primary">Save Changes</button>
+        </div>
+      </form>
+
+      <aside class="editor-sidebar">
+        <section class="editor-side-panel">
+          <h2>Suggestion</h2>
+          <p>The cleanest structure for your app is:</p>
+          <ul>
+            <li>Create the series first</li>
+            <li>Save its title, genre, cover, and synopsis</li>
+            <li>Manage chapters and episodes separately after that</li>
+          </ul>
+        </section>
+
+        <section class="editor-side-panel accent">
+          <h2>Why this works better</h2>
+          <p>It keeps your published series stable while still letting creators freely add, remove, and edit chapters later.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/series-editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Edit Creator Profile - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/profile-editor.css">
+</head>
+<body data-page="creator-profile-editor">
+  <div id="site-header"></div>
+
+  <main class="profile-editor-shell">
+    <section class="profile-editor-hero">
+      <a href="creator-dashboard.html" class="hero-back-link" aria-label="Go back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <div class="editor-kicker">Creator Profile</div>
+      <h1>Edit your creator profile.</h1>
+      <p>Update your creator identity, default format, and publishing profile without reopening creator registration.</p>
+    </section>
+
+    <section class="profile-editor-layout">
+      <form class="profile-editor-form" id="creatorProfileEditorForm">
+        <section class="profile-editor-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">Identity</div>
+              <h2>Creator details</h2>
+            </div>
+          </div>
+
+          <div class="profile-editor-grid">
+            <label class="profile-editor-field profile-editor-field-wide">
+              <span>Creator Hero Image</span>
+              <div class="profile-upload-card">
+                <div class="profile-upload-preview cover-preview" id="creatorCoverPreview"></div>
+                <input type="file" accept="image/*" id="creatorCoverInput" name="coverImage">
+                <small>Upload the hero image used across your creator profile surfaces.</small>
+              </div>
+            </label>
+            <label class="profile-editor-field">
+              <span>Creator Avatar</span>
+              <div class="profile-upload-card">
+                <img class="profile-upload-preview avatar-preview" id="creatorAvatarPreview" src="images/image1.png" alt="Creator avatar preview">
+                <input type="file" accept="image/*" id="creatorAvatarInput" name="avatar">
+                <small>Upload the portrait image shown on creator profile cards.</small>
+              </div>
+            </label>
+            <label class="profile-editor-field">
+              <span>Display Name</span>
+              <input type="text" name="displayName" required>
+            </label>
+            <label class="profile-editor-field">
+              <span>Studio Name</span>
+              <input type="text" name="studioName" id="studioNameInput" list="studioNameSuggestions" autocomplete="off" placeholder="Search or select a studio">
+              <datalist id="studioNameSuggestions"></datalist>
+              <small>Choose a studio from TooU's available studios if you join one later.</small>
+            </label>
+            <div class="profile-editor-field profile-editor-field-wide hidden" id="studioPickerResultsWrap">
+              <span>Available Studios</span>
+              <div class="studio-picker-results" id="studioPickerResults"></div>
+            </div>
+            <div class="profile-editor-field profile-editor-field-wide hidden" id="studioTeamManager">
+              <span>Studio Artists</span>
+              <small>Add registered TooU creators to your studio team. Their own creator profiles stay separate, and they will appear under your studio page.</small>
+              <input type="text" id="studioArtistSearchInput" placeholder="Search creators by name">
+              <div class="studio-artist-results" id="studioArtistResults"></div>
+              <div class="studio-team-list" id="studioTeamList"></div>
+            </div>
+            <label class="profile-editor-field">
+              <span>Phone Number</span>
+              <input type="tel" name="phoneNumber">
+            </label>
+            <label class="profile-editor-field">
+              <span>Primary Format</span>
+              <select name="primaryFormat">
+                <option value="webtoon">Webtoon</option>
+                <option value="comics">Comics</option>
+                <option value="knowledge">Knowledge</option>
+                <option value="novel">Novel</option>
+              </select>
+            </label>
+            <label class="profile-editor-field">
+              <span>Artist Style</span>
+              <select name="artistStyle">
+                <option value="cinematic">Cinematic</option>
+                <option value="clean-line">Clean Line</option>
+                <option value="painterly">Painterly</option>
+                <option value="minimal">Minimal</option>
+                <option value="educational">Educational</option>
+                <option value="prose-first">Prose First</option>
+              </select>
+            </label>
+            <label class="profile-editor-field profile-editor-field-wide">
+              <span>Publishing Goals</span>
+              <input type="text" name="goals">
+            </label>
+            <label class="profile-editor-field profile-editor-field-wide">
+              <span>Creator Bio</span>
+              <textarea name="bio" rows="5"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <div class="profile-editor-actions">
+          <a href="creator-dashboard.html" class="profile-editor-btn secondary">Cancel</a>
+          <button type="submit" class="profile-editor-btn primary">Save Changes</button>
+        </div>
+      </form>
+
+      <aside class="profile-editor-sidebar">
+        <section class="profile-editor-side-card">
+          <h2>Creator mode</h2>
+          <p>This keeps your creator identity separate from reader mode while still staying linked to the same person and account flow.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/mock-data.js"></script>
+  <script src="assets/js/creator-profile-editor.js"></script>
+</body>
+</html>

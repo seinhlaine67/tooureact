@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Sign Up - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/signup.css">
+</head>
+<body data-page="signup">
+  <div id="site-header"></div>
+
+  <main class="signup-shell">
+    <section class="signup-hero">
+      <a href="index.html" class="hero-back-link" aria-label="Go back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <div class="hero-chip">Join TooU</div>
+      <h1>Create your reader account</h1>
+      <p>Set up your reading profile, choose what you love, and keep the door open for creator mode later.</p>
+    </section>
+
+    <section class="signup-card">
+      <div class="card-head">
+        <h2>Create your account</h2>
+        <p>Your signup details will appear in your reader profile after registration.</p>
+      </div>
+
+      <div class="sync-panel hidden" id="readerSyncPanel">
+        <div>
+          <strong>Already created a creator profile?</strong>
+          <p>Use your creator details as a starting point, then adjust anything you want for reader mode.</p>
+        </div>
+        <button type="button" class="sync-btn" id="syncFromCreatorBtn">Sync from Creator</button>
+      </div>
+
+      <form class="signup-form" id="signupForm">
+        <div class="field-grid">
+          <label class="field">
+            <span>Username</span>
+            <input type="text" name="username" placeholder="Choose a username" required>
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="name@example.com" required>
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Create a secure password" required>
+          </label>
+
+          <label class="field">
+            <span>Confirm Password</span>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
+          </label>
+
+          <label class="field field-wide">
+            <span>Profile Photo</span>
+            <input type="file" name="avatar" accept="image/*">
+          </label>
+
+          <label class="field">
+            <span>Phone Number</span>
+            <input type="tel" name="phoneNumber" placeholder="09xxxxxxxxx">
+          </label>
+
+          <label class="field">
+            <span>Birthdate</span>
+            <input type="date" name="birthdate">
+          </label>
+
+          <label class="field field-wide">
+            <span>Place</span>
+            <input type="text" name="place" placeholder="City, State or Region">
+          </label>
+        </div>
+
+        <fieldset class="interest-group">
+          <legend>Content Interests</legend>
+          <div class="interest-options">
+            <label class="interest-chip"><input type="checkbox" name="contentInterests" value="Webtoon"><span>Webtoon</span></label>
+            <label class="interest-chip"><input type="checkbox" name="contentInterests" value="Novel"><span>Novel</span></label>
+            <label class="interest-chip"><input type="checkbox" name="contentInterests" value="Cartoon"><span>Cartoon</span></label>
+            <label class="interest-chip"><input type="checkbox" name="contentInterests" value="Comics"><span>Comics</span></label>
+            <label class="interest-chip"><input type="checkbox" name="contentInterests" value="Knowledge"><span>Knowledge</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="interest-group">
+          <legend>Genre Interests</legend>
+          <div class="interest-options">
+            <label class="interest-chip"><input type="checkbox" name="genreInterests" value="Romance"><span>Romance</span></label>
+            <label class="interest-chip"><input type="checkbox" name="genreInterests" value="Action"><span>Action</span></label>
+            <label class="interest-chip"><input type="checkbox" name="genreInterests" value="Mystery"><span>Mystery</span></label>
+            <label class="interest-chip"><input type="checkbox" name="genreInterests" value="Fantasy"><span>Fantasy</span></label>
+            <label class="interest-chip"><input type="checkbox" name="genreInterests" value="Horror"><span>Horror</span></label>
+            <label class="interest-chip"><input type="checkbox" name="genreInterests" value="Comedy"><span>Comedy</span></label>
+          </div>
+        </fieldset>
+
+        <label class="checkline">
+          <input type="checkbox" required>
+          <span>I agree to the terms, privacy policy, and community guidelines.</span>
+        </label>
+
+        <button type="submit" class="submit-btn">Create Account</button>
+      </form>
+
+      <div class="form-note" id="signupMessage">Your account can later be upgraded into a creator profile without starting over.</div>
+    </section>
+  </main>
+
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/signup.js"></script>
+</body>
+</html>

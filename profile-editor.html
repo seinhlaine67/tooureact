@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Edit Reader Profile - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/profile-editor.css">
+</head>
+<body data-page="profile-editor">
+  <div id="site-header"></div>
+
+  <main class="profile-editor-shell">
+    <section class="profile-editor-hero">
+      <a href="profile.html" class="hero-back-link" aria-label="Go back">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      <div class="editor-kicker">Reader Profile</div>
+      <h1>Edit your reader profile.</h1>
+      <p>Update the information shown in reader mode, then save it back to your profile.</p>
+    </section>
+
+    <section class="profile-editor-layout">
+      <form class="profile-editor-form" id="profileEditorForm">
+        <section class="profile-editor-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">Identity</div>
+              <h2>Reader details</h2>
+            </div>
+          </div>
+
+          <div class="profile-editor-grid">
+            <label class="profile-editor-field profile-editor-field-wide">
+              <span>Profile Cover Image</span>
+              <div class="profile-upload-card">
+                <div class="profile-upload-preview cover-preview" id="readerCoverPreview"></div>
+                <input type="file" accept="image/*" id="readerCoverInput" name="coverImage">
+                <small>Upload a wide cover image for your reader profile card.</small>
+              </div>
+            </label>
+            <label class="profile-editor-field">
+              <span>Profile Avatar</span>
+              <div class="profile-upload-card">
+                <img class="profile-upload-preview avatar-preview" id="readerAvatarPreview" src="https://i.pravatar.cc/120?img=12" alt="Reader avatar preview">
+                <input type="file" accept="image/*" id="readerAvatarInput" name="avatar">
+                <small>Choose the profile image readers will see.</small>
+              </div>
+            </label>
+            <label class="profile-editor-field">
+              <span>Username</span>
+              <input type="text" name="username" required>
+            </label>
+            <label class="profile-editor-field">
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+            <label class="profile-editor-field">
+              <span>Phone Number</span>
+              <input type="tel" name="phoneNumber">
+            </label>
+            <label class="profile-editor-field">
+              <span>Birthdate</span>
+              <input type="date" name="birthdate">
+            </label>
+            <label class="profile-editor-field profile-editor-field-wide">
+              <span>Place</span>
+              <input type="text" name="place">
+            </label>
+            <label class="profile-editor-field profile-editor-field-wide">
+              <span>Bio</span>
+              <textarea name="bio" rows="5"></textarea>
+            </label>
+          </div>
+        </section>
+
+        <div class="profile-editor-actions">
+          <a href="profile.html" class="profile-editor-btn secondary">Cancel</a>
+          <button type="submit" class="profile-editor-btn primary">Save Changes</button>
+        </div>
+      </form>
+
+      <aside class="profile-editor-sidebar">
+        <section class="profile-editor-side-card">
+          <h2>Reader mode</h2>
+          <p>Your reader profile is the account view readers see first. You can still connect creator mode later without losing this identity.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/profile-editor.js"></script>
+</body>
+</html>
